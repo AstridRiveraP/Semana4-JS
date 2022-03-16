@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokedex LaunchX</title>
+        <link rel = "icon" href="assets/pokeball.png">
+    </head>
+    <body>
+        <!-- API: conexion entre las bases de datos con la interfaz -->
+        <h1>Pokedex LaunchX</h1>
+        <input type="text" placeholder="Pikachu" id="pokeName" name="pokeName">
+        <img width="150px" alt="Pokemon"id="pokeImg"><br>
+        <button onclick="fetchPokemon()">Cambiar pokemon</button>
+
+    
+        <!-- Tipo de pokémon -- incluir numero de pokemon (id) height y weight, a ver si podemos girarlo-->
+        <h3>Tipo de pokemon</h3>
+        
+        <span class="pokeType" id="pt1"></span>
+        <span class="pokeType" id="pt2"></span>
+
+
+        <!-- Estadísticas -->
+        <h3>Estadísticas</h3>
+        <ul id="pokeStats">
+
+        </ul>
+
+
+
+        <!-- Movimientos -->
+        <h3>Habilidades</h3>
+        <h3>Normales</h3>
+        <ul id="pokeAbilitiesNormal">
+
+        </ul>
+        <h3>Ocultas</h3>
+        <ul id="pokeAbilitiesHidden">
+
+        </ul>
+
+        <!-- #shiny imagen -->
+        <button onclick="toggleShiny()">Shiny</button>
+        <!-- #imagen female -->
+        <button onclick="toggleGender()">Female</button>
+
+        <button onclick="toggleBack()">Rotate</button>
+
+
+        <!-- #evoluciones imagen -->
+   
+
+        <!-- ##buscar por tipo -->
+        <!-- ##mostrar todos -->
+
+    </body>
+    <footer>
+        <script src="./pokedex.js"></script>
+    </footer>
+</html>

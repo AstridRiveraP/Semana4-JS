@@ -1,15 +1,17 @@
 // console.log("Hola Explorers");
-var pokeImg = document.getElementById("pokeImg");
-var pokeType = document.getElementsByClassName("pokeType");
-var pokeStats = document.getElementById("pokeStats");
-var pokeAbilitiesNormal = document.getElementById("pokeAbilitiesNormal");
-var pokeAbilitiesHidden = document.getElementById("pokeAbilitiesHidden");
+const pokeImg = document.getElementById("pokeImg");
+const pokeType = document.getElementsByClassName("pokeType");
+const pokeStats = document.getElementById("pokeStats");
+const pokeAbilitiesNormal = document.getElementById("pokeAbilitiesNormal");
+const pokeAbilitiesHidden = document.getElementById("pokeAbilitiesHidden");
+const nameDisplay = document.getElementById("nameDisplay");
+const pokeNumber = document.getElementById("pokeNumber");
+const pokeHeight = document.getElementById("pokeHeight");
+const pokeWeight = document.getElementById("pokeWeight");
+
 var state;
 var images;
-// var pokeWeight = document.getElementById("pokeWeight");
-// var pokeHeight = document.getElementById("pokeHeight");
-// var pokeId = document.getElementById("pokeId");
-// var pokeName = document.getElementById("pokeName");
+
 
 
 const fetchPokemon = () =>{
@@ -21,7 +23,7 @@ const fetchPokemon = () =>{
        //manejo de errores
        if(res.status != "200"){
         console.log(res);
-        pokeImage("https://media.comicbook.com/2017/04/pokemon-sad-moments-pikachu-crying-990351.jpg");
+        // pokeImage("https://media.comicbook.com/2017/04/pokemon-sad-moments-pikachu-crying-990351.jpg");
         }else{
             pokeType.innerHTML = "";
             pokeStats.innerHTML = "";
@@ -53,6 +55,13 @@ const fetchPokemon = () =>{
             }
             //cambiar imagen
             pokeImage(images.front);
+            
+            //cambiar nombre, numero, peso y tamaño
+            nameDisplay.innerHTML = data.name;
+            pokeNumber.innerHTML = `No.${data.id}`;
+            pokeHeight.innerHTML = `${data.height/10}m`;
+            pokeWeight.innerHTML = `${data.weight/10}kg`
+
 
             //cambiar estadísticas
             let stats = data.stats;
@@ -77,8 +86,8 @@ const fetchPokemon = () =>{
 }
 const buildImage=()=>{
     const dir = state.back ? "back":"front";
-    const gender = state.female ? "_female": "";
-    const shiny = state.shiny ? "_shiny": "";
+    const gender = state.female && images.front_female? "_female": "";
+    const shiny = state.shiny && images.front_shiny? "_shiny": "";
     
     console.log(`images.${dir}${shiny}${gender}`);
     return (eval(`images.${dir}${shiny}${gender}`));

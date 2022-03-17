@@ -5,18 +5,74 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pokedex LaunchX</title>
-        <link rel = "icon" href="assets/pokeball.png">
+        <link rel = "icon" href="assets/pokeball2.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Squada+One|Staatliches|VT323" rel="stylesheet" /> -->
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/f869a2c5a0.js" crossorigin="anonymous"></script>
+
     </head>
     <body>
-        <!-- API: conexion entre las bases de datos con la interfaz -->
-        <h1>Pokedex LaunchX</h1>
-        <input type="text" placeholder="Pikachu" id="pokeName" name="pokeName">
-        <img width="150px" alt="Pokemon"id="pokeImg"><br>
-        <button onclick="fetchPokemon()">Cambiar pokemon</button>
+        <header>
+            <img class= "logo" src="./assets/pokedex.png">
+        </header> 
+        <section id="pokedexDesign" class="flex-col" fl>
+            <div id="left" class="pokedexSides float-left">
+
+                <div class="maroon-back flex-col">
+                     <!-- input -->
+                    <div id="busqueda" class="flex-row" style="margin-bottom: 5px;">
+                        <input class="float-left" type="text" placeholder="Escribe el nombre de un pokemon" id="pokeName" name="pokeName">
+                        <button id="search"class="float-right" onclick="fetchPokemon()"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+                    </div>
+
+
+                    <!-- imagen -->
+                    <div id="divImg">
+                        <img alt="Pokemon"id="pokeImg" src="./assets/blakpokeball.png" width="50%" height:auto><br>
+                    </div>
+                    <!-- botones -->
+                    <div id="botones"class="flex-row">
+                        <button class = "sprite-control" onclick="toggleGender()"><i class="fa-solid fa-venus"></i></button>
+                        <button class = "sprite-control shiny" onclick="toggleShiny()">Shiny</button>
+                        <button class = "sprite-control" onclick="toggleBack()"><i class="fa-solid fa-rotate"></i></button>
+                    </div>
+
+                    <!-- nombre -->
+                    <div id="datos" class="screen flex-col" style="width:100%">
+                        <div class="flex-row">
+                            <span class="float-left text-digital"id="nameDisplay" style="text-align:left; width:50%">Name</span>
+                            <span class="float-right text-digital"id="pokeNumber" style="text-align:right; width:50%">#</span>
+                        </div>
+                         <div id="caracteristicas" class="flex-col">
+                             <div class = "flex-row">
+                                <span class="text-digital dotted-line" style="text-align:left; width:50%">Height</span>
+                                <span class="text-digital"id = "pokeHeight" style="text-align:right; width:50%"></span>
+                             </div>
+                             <div class = "flex-row">
+                                <span class="text-digital" style="text-align:left; width:50%">Weight</span>
+                                <span class="text-digital" id= "pokeWeight" style="text-align:right; width:50%"></span>
+                             </div>
+                        </div>
+                    </div>
+                    
+                    <!-- height weight -->
+                    
+
+                </div>
+               
+            </div>
+
+            <div id="right" class="pokedexSides float-right">  
+                <!-- Tipo de pokémon -- incluir numero de pokemon (id) height y weight, a ver si podemos girarlo-->
+                <h3>Tipo de pokemon</h3>
+            </div>
+        </section>
 
     
-        <!-- Tipo de pokémon -- incluir numero de pokemon (id) height y weight, a ver si podemos girarlo-->
-        <h3>Tipo de pokemon</h3>
         
         <span class="pokeType" id="pt1"></span>
         <span class="pokeType" id="pt2"></span>
@@ -41,12 +97,8 @@
 
         </ul>
 
-        <!-- #shiny imagen -->
-        <button onclick="toggleShiny()">Shiny</button>
-        <!-- #imagen female -->
-        <button onclick="toggleGender()">Female</button>
-
-        <button onclick="toggleBack()">Rotate</button>
+       
+        
 
 
         <!-- #evoluciones imagen -->

@@ -41,6 +41,9 @@ header{
     padding: 5% 20%;
     flex-wrap: wrap;
     /* flex-basis: 100vh; */
+    background-image: url(./assets/cover.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     
     
 }
@@ -64,9 +67,7 @@ header{
     font-size: 0.8rem;
     flex-basis:95%;
 }
-#search{
-    flex-basis: 5%;
-}
+
 
 .float-left{
     float:left;
@@ -153,6 +154,17 @@ header{
     width: 100px;
     text-shadow: white -1px 1px;
     font-size:1.5rem;
+}
+#search{
+    flex-basis: 5%;
+    border-radius: 20px;
+    border: groove grey 3px;
+    border-color: #b06868;
+    background-color: rgb(230,21,21);
+    padding:2%;
+
+
+
 }
 #nameDisplay{
     text-transform: uppercase;

@@ -18,21 +18,21 @@
         <header>
             <img class= "logo" src="./assets/pokedex.png">
         </header> 
-        <section id="pokedexDesign" class="flex-col" fl>
+        <section id="pokedexDesign" class="flex-col">
             <!-- Left Side pokedex -->
             <div id="left" class="pokedexSides float-left">
 
                 <div class="maroon-back flex-col">
                      <!-- input -->
-                    <div id="busqueda" class="flex-row" style="margin-bottom: 5px;">
-                        <input class="float-left" type="text" placeholder="Escribe el nombre de un pokemon" id="pokeName" name="pokeName">
-                        <button id="search"class="float-right" onclick="fetchPokemonbyName()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div id="busqueda" class="flex-row" style="margin-bottom: 5px;gap:2%;">
+                        <input class="float-left inset" type="text" placeholder="Escribe el nombre de un pokemon" id="pokeName" name="pokeName">
+                        <button id="search"class="float-right"  onclick="fetchPokemonbyName()"><i class="fa-solid fa-magnifying-glass"></i></button>
 
                     </div>
 
 
                     <!-- imagen -->
-                    <div id="divImg" class="imgPix"><img alt="Pokemon"id="pokeImg"></div>
+                    <div id="divImg" class="imgPix"><img alt="Pokemon"id="pokeImg"style="display:none"></div>
                     <!-- botones -->
                     <div id="botones"class="flex-row">
                         <button class = "sprite-control" onclick="toggleGender()"><i class="fa-solid fa-venus"></i></button>

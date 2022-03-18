@@ -87,6 +87,7 @@ const changeData=(data)=>{
     changePokeTypes(data.types);
     
     //cambiar imagen
+    pokeImg.style.display="flex";
     pokeImage(images.front);
     
     //cambiar nombre, numero, peso y tamaño

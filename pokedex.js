@@ -87,7 +87,7 @@ const changeData=(data)=>{
     changePokeTypes(data.types);
     
     //cambiar imagen
-    pokeImg.style.display="flex";
+    pokeImg.display="flex";
     pokeImage(images.front);
     
     //cambiar nombre, numero, peso y tamaño
@@ -127,9 +127,6 @@ const changeData=(data)=>{
     }
     
 }
-// image: info.sprites.front_default,
-// name: chain[i].name
-
 
 const fetchPokemonbyName = () =>{
     const pokeName = document.getElementById("pokeName");
@@ -140,7 +137,6 @@ const fetchPokemonbyName = () =>{
        //manejo de errores
        if(res.status != "200"){
         console.log(res);
-        // pokeImage("https://media.comicbook.com/2017/04/pokemon-sad-moments-pikachu-crying-990351.jpg");
         }else{
             pokeType.innerHTML = "";
             pokeStats.innerHTML = "";

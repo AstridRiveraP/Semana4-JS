@@ -61,8 +61,10 @@ const toggleBack=()=>{
     }
 }
 const pokeImage=(url)=>{
+    pokeImg.style.display="flex";
     pokeImg.src=url;
-    pokeImg.style.height="100%";  
+    pokeImg.style.height="100%"; 
+
 }
 const changeData=(data)=>{
     state = {
@@ -87,7 +89,6 @@ const changeData=(data)=>{
     changePokeTypes(data.types);
     
     //cambiar imagen
-    pokeImg.display="flex";
     pokeImage(images.front);
     
     //cambiar nombre, numero, peso y tamaño
